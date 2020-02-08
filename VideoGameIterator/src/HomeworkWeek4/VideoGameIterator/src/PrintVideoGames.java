@@ -1,8 +1,12 @@
 package HomeworkWeek4.VideoGameIterator.src;
 
+import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrintVideoGames {
-	PS4Games ps4 = null;
-	PCGames pc = null;
+	PS4Games ps4;
+	PCGames pc;
 	
 	public PrintVideoGames(PS4Games ps4, PCGames pc) {
 		this.ps4 = ps4;
@@ -10,7 +14,7 @@ public class PrintVideoGames {
 	}
 	
 	public void print()
-	{
+	{	
 		Iterator ps4It = ps4.createIterator();
 		Iterator pcIt = pc.createIterator();
 		
@@ -18,14 +22,15 @@ public class PrintVideoGames {
 		print(pcIt);
 	}
 	
-	private void print(Iterator it)
+	public void print(Iterator it)
 	{
 		while(it.hasNext())
 		{
 			VideoGame vg = (VideoGame)it.next();
 			System.out.println(vg.getNameOfGame() + ", ");
-			System.out.println(vg.genre + ", ");
-			System.out.println(vg.price);
+			System.out.println(vg.getGenre() + ", ");
+			System.out.println(vg.getPrice());
+			System.out.println();
 		}
 	}
 }

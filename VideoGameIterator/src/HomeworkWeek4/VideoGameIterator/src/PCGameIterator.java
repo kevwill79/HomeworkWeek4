@@ -1,6 +1,8 @@
 package HomeworkWeek4.VideoGameIterator.src;
 
-public class PCGameIterator implements Iterator {
+import java.util.Iterator;
+
+public class PCGameIterator implements Iterator<VideoGame> {
 		VideoGame[] games;
 		int position = 0;
 		
@@ -17,7 +19,7 @@ public class PCGameIterator implements Iterator {
 		
 		public VideoGame next() {
 			VideoGame nextGame = games[position];
-			position += position;
+			position = position + 1;
 			
 			return nextGame;
 		}

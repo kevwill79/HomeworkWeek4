@@ -1,6 +1,7 @@
 package HomeworkWeek4.VideoGameIterator.src;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PS4Games {
 ArrayList<VideoGame> ps4Games;
@@ -20,11 +21,11 @@ ArrayList<VideoGame> ps4Games;
 		ps4Games.add(ps4Game);
 	}
 	
-	/*public ArrayList<VideoGame> getPS4Games() {
+	public ArrayList<VideoGame> getPS4Games() {
 		return ps4Games;
-	}*/
+	}
 	
-	public Iterator createIterator() {
-		return new PS4GameIterator(ps4Games);
+	public Iterator<VideoGame> createIterator() {
+		return ps4Games.iterator();
 	}
 }

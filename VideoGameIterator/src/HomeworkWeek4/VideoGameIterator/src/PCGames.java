@@ -1,9 +1,11 @@
 package HomeworkWeek4.VideoGameIterator.src;
 
+import java.util.Iterator;
+
 public class PCGames {
 	VideoGame[] pcGames;
 	int numOfGames = 0;
-	static final int MAX_GAMES = 7;
+	static final int MAX_GAMES = 4;
 	
 	public PCGames() {
 		pcGames = new VideoGame[MAX_GAMES];
@@ -23,15 +25,15 @@ public class PCGames {
 		else
 		{
 			pcGames[numOfGames] = pcGame;
-			numOfGames += numOfGames;
+			numOfGames = numOfGames + 1;
 		}
 	}
 	
-	/*public VideoGame[] getPCGames() {
+	public VideoGame[] getPCGames() {
 		return pcGames;
-	}*/
+	}
 	
-	public Iterator createIterator() {
+	public Iterator<VideoGame> createIterator() {
 		return new PCGameIterator(pcGames);
 	}
 }
