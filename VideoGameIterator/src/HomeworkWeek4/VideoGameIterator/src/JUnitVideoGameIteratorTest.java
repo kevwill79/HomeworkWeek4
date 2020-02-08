@@ -2,6 +2,7 @@ package HomeworkWeek4.VideoGameIterator.src;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -29,11 +30,15 @@ class JUnitVideoGameIteratorTest {
 		PrintVideoGames pvg = new PrintVideoGames(ps4g, pcg);
 		pvg.print();
 		
+		m = (VideoGame)ps4It.next();
+		
 		assertNotNull(position);
 		assertNotNull(games);
 		assertNotEquals(position, game.size());
 		assertNotNull(best);
 		assertNotEquals(best, games);
+		assertFalse(ps4It.hasNext());
+		
 		
 	}
 
