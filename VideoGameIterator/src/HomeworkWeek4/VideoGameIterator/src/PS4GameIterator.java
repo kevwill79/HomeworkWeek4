@@ -2,7 +2,7 @@ package HomeworkWeek4.VideoGameIterator.src;
 
 import java.util.ArrayList;
 
-public class PS4GameIterator {
+public class PS4GameIterator implements Iterator{
 	ArrayList<VideoGame> games;
 	int position = 0;
 	
